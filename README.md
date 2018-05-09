@@ -18,4 +18,4 @@ you need to rename the wanted config file to mpv.conf. they are currently only s
 Linux user can be calmed down, the auto rotate works for you! :)
 
 # Youtube 4k issues
-recently, i switched the ytdl format option in the high settings of mine on the high preset. if you run into issues because of slower internet, change ytdl-format to "ytdl-format='bestvideo[ext=mp4][width<=1920][height<=1080]+bestaudio[ext=m4a]'"
+recently, i switched the ytdl format option in the high settings of mine on the high preset. if you run into issues because of slower internet, change ytdl-format to "ytdl-format='bestvideo[ext=mp4][width<=1920][height<=1080][fps<=30]+bestaudio[ext=m4a]'"
