@@ -9,18 +9,19 @@ or just make a pull request if you have any recommendations, if i like it, i put
 
 # Installation
 Depending on your Operating System, you need to place the stuff inside the zip in a certain directory.
-The root directory needs to look like this
->mpv
+The root directory needs to look like this:
 
-->input.conf
+->mpv
 
-->mpv.conf
+-->input.conf
 
--->Shaders
+-->mpv.conf
 
--->script-opts
+--->Shaders
 
--->scripts
+--->script-opts
+
+--->scripts
 
 
 # Windows Path
