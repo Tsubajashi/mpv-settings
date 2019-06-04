@@ -28,7 +28,7 @@ The root directory needs to look like this:
 "C:\Users\YOURNAME\AppData\Roaming\mpv"
 
 # Linux Path
-/home/.config/mpv
+/home/USERNAME/.config/mpv
 
 # Mac Path
 /USERNAME/.config/mpv
