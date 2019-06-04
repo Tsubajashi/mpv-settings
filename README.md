@@ -11,11 +11,17 @@ or just make a pull request if you have any recommendations, if i like it, i put
 Depending on your Operating System, you need to place the stuff inside the zip in a certain directory.
 The root directory needs to look like this
 >mpv
+
 ->input.conf
+
 ->mpv.conf
+
 -->Shaders
+
 -->script-opts
+
 -->scripts
+
 
 # Windows Path
 "C:\Users\YOURNAME\AppData\Roaming\mpv"
