@@ -1,5 +1,6 @@
 # mpv-settings
 basically my settings for MPV (Windows/Linux/Mac Compatible) (i think)
+last tested version: mpv-x86_64-20190609-git-fbe2671
 
 thats my tweaked config.
 might not be suitable for your pc, but if you have any recommendations to switch stuff, just tell me.
