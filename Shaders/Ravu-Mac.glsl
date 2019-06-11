@@ -111,6 +111,7 @@ return res;
 //!WIDTH 2 HOOKED.w *
 //!HEIGHT 2 HOOKED.h *
 //!WHEN HOOKED.w OUTPUT.w / 0.707106 < HOOKED.h OUTPUT.h / 0.707106 < *
+//!COMPONENTS 1
 vec4 hook() {
     vec2 dir = fract(HOOKED_pos * HOOKED_size) - 0.5;
     int idx = int(dir.x > 0.0) * 2 + int(dir.y > 0.0);
