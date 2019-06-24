@@ -23,7 +23,7 @@ The root directory needs to look like this:
 
 --->scripts
 
-
+Inside the mpv.conf, there are profile switches. choose them as you need them.
 # Windows Path
 "C:\Users\YOURNAME\AppData\Roaming\mpv"
 
