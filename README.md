@@ -35,10 +35,6 @@ Path:
 
 /USERNAME/.config/mpv
 
-
-The Issue: 
-
-macOS is only compatible with some shaders (no compute shader support), and is limited to opengl output(and an old feature set at that). thats why if you want to install the config on a mac, delete "mpv.conf" and rename "mpv-mac.conf" to "mpv.conf". this is a special version of my config for macs/macbooks.
 Tested Apple Devices:
 
 - Base Macbook Pro 2018 13"
