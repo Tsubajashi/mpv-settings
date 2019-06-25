@@ -27,6 +27,10 @@ Inside the mpv.conf, there are profile switches. choose them as you need them.
 # Windows Path
 "C:\Users\YOURNAME\AppData\Roaming\mpv"
 
+On Windows, Intel IGPUs cannot upscale whilst dithering with error diffusion options.
+
+Disable Error Diffusion, or Upscaling, depending on what looks better to your eyes. There are comments in the code to guide you.
+
 # Linux Path
 /home/USERNAME/.config/mpv
 
