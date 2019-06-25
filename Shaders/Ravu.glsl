@@ -17,7 +17,7 @@
 //!BIND HOOKED
 //!BIND ravu_lite_lut3
 //!SAVE ravu_lite_int
-//!WHEN HOOKED.w OUTPUT.w / 0.707106 < HOOKED.h OUTPUT.h / 0.707106 < *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!COMPONENTS 4
 vec4 hook() {
 vec4 gather0 = HOOKED_mul * textureGatherOffset(HOOKED_raw, HOOKED_pos, ivec2(-2, -2), 0);
@@ -110,7 +110,7 @@ return res;
 //!BIND ravu_lite_int
 //!WIDTH 2 HOOKED.w *
 //!HEIGHT 2 HOOKED.h *
-//!WHEN HOOKED.w OUTPUT.w / 0.707106 < HOOKED.h OUTPUT.h / 0.707106 < *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!COMPONENTS 1
 vec4 hook() {
     vec2 dir = fract(HOOKED_pos * HOOKED_size) - 0.5;
