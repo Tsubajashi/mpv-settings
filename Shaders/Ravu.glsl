@@ -12,7 +12,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-//!DESC Ravu-Lite (r3, compute)
+//!DESC RAVU (r3, compute)
 //!HOOK LUMA
 //!BIND HOOKED
 //!BIND ravu_lite_lut3

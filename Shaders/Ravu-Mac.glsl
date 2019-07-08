@@ -12,7 +12,7 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-//!DESC RAVU-Lite (step1, r3)
+//!DESC RAVU-Lite (step1, r3, gather)
 //!HOOK LUMA
 //!BIND HOOKED
 //!BIND ravu_lite_lut3
