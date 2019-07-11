@@ -1,5 +1,5 @@
 # mpv-settings
-basically my settings for MPV (Windows/Linux/Mac Compatible) (i think)
+basically my settings for MPV (Windows/Mac Compatible) (i think)
 
 thats my tweaked config.
 might not be suitable for your pc, but if you have any recommendations to switch stuff, just tell me.
@@ -30,9 +30,6 @@ Inside the mpv.conf, there are profile switches. choose them as you need them.
 On Windows, Intel IGPUs cannot upscale whilst dithering with error diffusion options.
 
 Disable Error Diffusion, or Upscaling, depending on what looks better to your eyes. There are comments in the code to guide you.
-
-# Linux Path
-/home/USERNAME/.config/mpv
 
 # MAC INSTALLATION
 Path:
