@@ -1,5 +1,5 @@
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC feature map 1
 //!BIND LUMA
 //!SAVE FEATURE1
@@ -36,7 +36,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC feature map 2
 //!BIND LUMA
 //!SAVE FEATURE2
@@ -73,7 +73,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC mapping 1_1
 //!BIND FEATURE1
 //!BIND FEATURE2
@@ -105,7 +105,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC mapping 1_2
 //!BIND FEATURE1
 //!BIND FEATURE2
@@ -137,7 +137,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC mapping 2_1
 //!BIND MODEL21
 //!BIND MODEL22
@@ -169,7 +169,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC mapping 2_2
 //!BIND MODEL21
 //!BIND MODEL22
@@ -201,7 +201,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC mapping 3_1
 //!BIND MODEL1
 //!BIND MODEL2
@@ -233,7 +233,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC mapping 3_2
 //!BIND MODEL1
 //!BIND MODEL2
@@ -265,7 +265,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC mapping 4_1
 //!BIND MODEL21
 //!BIND MODEL22
@@ -297,7 +297,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC mapping 4_2
 //!BIND MODEL21
 //!BIND MODEL22
@@ -329,7 +329,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC sub-band residuals 1
 //!BIND MODEL1
 //!BIND MODEL2
@@ -347,7 +347,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC sub-band residuals 2
 //!BIND MODEL1
 //!BIND MODEL2
@@ -365,7 +365,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!DESC sub-pixel convolution 1
 //!BIND RES1
 //!BIND RES2
@@ -396,7 +396,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN OUTPUT.w LUMA.w / 1.400 > OUTPUT.h LUMA.h / 1.400 > *
+//!WHEN HOOKED.w OUTPUT.w / 0.8 < HOOKED.h OUTPUT.h / 0.8 < *
 //!WIDTH LUMA.w 2 *
 //!HEIGHT LUMA.h 2 *
 //!DESC aggregation
