@@ -1,5 +1,5 @@
 # mpv-settings
-basically my settings for MPV (Windows/Mac Compatible) (i think)
+basically my settings for MPV (Windows/Mac/linux Compatible) (i think)
 
 thats my tweaked config.
 might not be suitable for your pc, but if you have any recommendations to switch stuff, just tell me.
@@ -39,3 +39,8 @@ Path:
 Tested Apple Devices:
 
 - Base Macbook Pro 2018 13"
+
+# LINUX INSTALLATION
+Path
+
+/.config/mpv
