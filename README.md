@@ -44,5 +44,5 @@ Tested Apple Devices:
 # Linux INSTALLATION
 Path:
 
-/home/.config/mpv
+/home/user/.config/mpv
 
