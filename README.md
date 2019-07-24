@@ -39,3 +39,10 @@ Path:
 Tested Apple Devices:
 
 - Base Macbook Pro 2018 13"
+
+
+# Linux INSTALLATION
+Path:
+
+/home/.config/mpv
+
