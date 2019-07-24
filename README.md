@@ -1,5 +1,5 @@
 # mpv-settings
-basically my settings for MPV (Windows/Mac Compatible) (i think)
+basically my settings for MPV (Windows/Mac/Linux Compatible)
 
 thats my tweaked config.
 might not be suitable for your pc, but if you have any recommendations to switch stuff, just tell me.
