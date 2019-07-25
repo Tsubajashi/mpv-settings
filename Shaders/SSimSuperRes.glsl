@@ -154,7 +154,7 @@ vec4 hook() {
 //!COMPONENTS 4
 //!DESC SSSR meanH & var
 
-#define locality    1000.0
+#define locality    16.0
 #define spread      1.0 / locality
 
 #define sqr(x)      pow(x, 2.0)
