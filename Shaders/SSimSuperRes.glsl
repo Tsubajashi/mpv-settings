@@ -28,7 +28,7 @@
 #define offset      vec2(0,0)
 
 #define MN(B,C,x)   (x <= 1.0 ? ((2.-1.5*B-C)*x + (-3.+2.*B+C))*x*x + (1.-B/3.) : (((-B/6.-C)*x + (B+5.*C))*x + (-2.*B-8.*C))*x+((4./3.)*B+4.*C))
-#define Kernel(x)   MN(1.0/3.0, 1.0/3.0, abs(x))
+#define Kernel(x)   MN(0.67962275898295921, 0.1601886205085204, abs(x))
 #define taps        2.0
 
 #define Kb 0.0722
@@ -76,7 +76,7 @@ vec4 hook() {
 #define offset      vec2(0,0)
 
 #define MN(B,C,x)   (x <= 1.0 ? ((2.-1.5*B-C)*x + (-3.+2.*B+C))*x*x + (1.-B/3.) : (((-B/6.-C)*x + (B+5.*C))*x + (-2.*B-8.*C))*x+((4./3.)*B+4.*C))
-#define Kernel(x)   MN(1.0/3.0, 1.0/3.0, abs(x))
+#define Kernel(x)   MN(0.67962275898295921, 0.1601886205085204, abs(x))
 #define taps        2.0
 
 #define Kb 0.0722
@@ -154,7 +154,7 @@ vec4 hook() {
 //!COMPONENTS 4
 //!DESC SSSR meanH & var
 
-#define locality    16.0
+#define locality    50.0
 #define spread      1.0 / locality
 
 #define sqr(x)      pow(x, 2.0)
