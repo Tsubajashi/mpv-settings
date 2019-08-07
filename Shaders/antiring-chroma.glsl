@@ -1,6 +1,6 @@
-//!DESC scale antiringing
-//!HOOK POSTKERNEL
-//!BIND PREKERNEL
+//!DESC cscale antiringing
+//!HOOK CHROMA_SCALED
+//!BIND CHROMA
 //!BIND HOOKED
 
 //-- Configurable parameters --
@@ -11,9 +11,8 @@ const float strength = 1.0;
 const float sq2i = 0.7071067811865475;
 
 vec4 hook() {
-    vec2 kpos = (input_size * PREKERNEL_pos + tex_offset) / PREKERNEL_size;
 
-#define get(x,y) PREKERNEL_tex(kpos + PREKERNEL_pt * radius * vec2(x,y))
+#define get(x,y) CHROMA_texOff(radius * vec2(x,y))
 
     vec4 c0 = get(-1,  0);
     vec4 c1 = get( 1,  0);
