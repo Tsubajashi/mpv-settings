@@ -1,7 +1,14 @@
--- deus0ww - 2019-05-08
+-- deus0ww - 2019-07-01
 
 local mp      = require 'mp'
 local msg     = require 'mp.msg'
+
+
+
+-- Show Finder
+mp.register_script_message('ShowFinder', function()
+	mp.command_native({'run', 'open', '-a', 'Finder'})
+end)
 
 
 
