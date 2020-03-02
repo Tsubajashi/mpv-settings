@@ -1,4 +1,4 @@
-//Anime4K Hybrid + CAS GLSL v2.0 Release Candidate 2 UltraFast Version
+//Anime4K Hybrid + CAS GLSL v2.0 Release Candidate 2 Fast Version
 
 // MIT License
 
@@ -25,7 +25,7 @@
 // SOFTWARE.
 
 
-//!DESC Anime4K-Hybrid-CAS-v2.0RC2-UltraFast
+//!DESC Anime4K-Hybrid-CAS-v2.0RC2-Fast
 //!HOOK LUMA
 //!BIND HOOKED
 
@@ -106,9 +106,9 @@ vec4 hook() {
 	ampR = sqrt(ampR);
 	
 	// Filter shape.
-	//	0 w 0
-	//	w 1 w
-	//	0 w 0  
+	//  0 w 0
+	//  w 1 w
+	//  0 w 0  
 	float peak = -rcp(lerp(8.0, 5.0, saturate(sharpval)));
 
 	float wR = ampR * peak;
@@ -119,7 +119,7 @@ vec4 hook() {
 	return outColor;
 }
 
-//!DESC Anime4K-Hybrid-ComputeGradientX-v2.0RC2-UltraFast
+//!DESC Anime4K-Hybrid-ComputeGradientX-v2.0RC2-Fast
 //!HOOK LUMA
 //!BIND HOOKED
 //!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
@@ -154,7 +154,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-Hybrid-ComputeGradientY-v2.0RC2-UltraFast
+//!DESC Anime4K-Hybrid-ComputeGradientY-v2.0RC2-Fast
 //!HOOK LUMA
 //!BIND HOOKED
 //!BIND LUMAD
@@ -197,7 +197,7 @@ vec4 hook() {
 
 
 
-//!DESC Anime4K-Hybrid-ComputeSecondGradient-v2.0RC2-UltraFast
+//!DESC Anime4K-Hybrid-ComputeSecondGradientX-v2.0RC2-Fast
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMAD
@@ -219,21 +219,66 @@ vec4 hook() {
 	//[bl  b br]
 	float l = LUMAD_tex(HOOKED_pos + vec2(-d.x, 0)).x;
 	float r = LUMAD_tex(HOOKED_pos + vec2(d.x, 0)).x;
-	float t = LUMAD_tex(HOOKED_pos + vec2(0, -d.y)).x;
-	float b = LUMAD_tex(HOOKED_pos + vec2(0, d.y)).x;
 	
 	
 	//Horizontal Gradient
-	float xgrad = (-l + r) * 4;
+	//[-1  0  1]
+	//[-2  0  2]
+	//[-1  0  1]
+	float xgrad = (-l + r);
 	
 	//Vertical Gradient
-	float ygrad = (-t + b) * 4;
+	//[-1 -2 -1]
+	//[ 0  0  0]
+	//[ 1  2  1]
+	float ygrad = (l + c + c + r);
 	
 	return vec4(xgrad, ygrad, 0, 0);
 }
 
 
-//!DESC Anime4K-Hybrid-Refine-v2.0RC2-UltraFast
+//!DESC Anime4K-Hybrid-ComputeSecondGradientY-v2.0RC2-Fast
+//!HOOK SCALED
+//!BIND HOOKED
+//!BIND LUMAD
+//!BIND LUMADD
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
+//!SAVE LUMADD
+//!COMPONENTS 2
+
+vec4 hook() {
+	vec2 d = HOOKED_pt;
+	
+	if (LUMAD_tex(HOOKED_pos).x < 0.2) {
+		return vec4(0);
+	}
+	
+	//[tl  t tr]
+	//[ l cc  r]
+	//[bl  b br]
+	vec4 t = LUMADD_tex(HOOKED_pos + vec2(0, -d.y));
+	float c = LUMADD_tex(HOOKED_pos).x;
+	vec4 b = LUMADD_tex(HOOKED_pos + vec2(0, d.y));
+	
+	
+	//Horizontal Gradient
+	//[-1  0  1]
+	//[-2  0  2]
+	//[-1  0  1]
+	float xgrad = (t.x + c + c + b.x);
+	
+	//Vertical Gradient
+	//[-1 -2 -1]
+	//[ 0  0  0]
+	//[ 1  2  1]
+	float ygrad = (-t.y + b.y);
+	
+	
+	return vec4(xgrad, ygrad, 0, 0);
+}
+
+
+//!DESC Anime4K-Hybrid-Refine-v2.0RC2-Fast
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMA
