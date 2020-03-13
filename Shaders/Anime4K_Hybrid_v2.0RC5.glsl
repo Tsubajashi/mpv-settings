@@ -1,4 +1,4 @@
-//Anime4K Hybrid + CAS GLSL v2.0 Release Candidate 3
+//Anime4K Hybrid + CAS GLSL v2.0 Release Candidate 5
 
 // MIT License
 
@@ -25,16 +25,15 @@
 // SOFTWARE.
 
 
-
-//!DESC Anime4K-Hybrid-CAS-v2.0RC3
-//!HOOK SCALED
+//!DESC Anime4K-Hybrid-CAS-v2.0RC5
+//!HOOK LUMA
 //!BIND HOOKED
 
 
 /* ---------------------- CAS SETTINGS ---------------------- */
 
 //CAS Sharpness, initial sharpen filter strength (traditional sharpening)
-#define SHARPNESS 1.0
+#define SHARPNESS 0.5
 
 /* --- MOST OF THE OTHER SETTINGS CAN BE FOUND AT THE END --- */
 
@@ -62,8 +61,8 @@ float rcp(float x) {
 	return 1.0 / x;
 }
 
-vec4 hook() {	
-	float sharpval = clamp(SCALED_size.x / 3840, 0, 1) * SHARPNESS; 
+vec4 hook() {	 
+	float sharpval = clamp(LUMA_size.x / 3840, 0, 1) * SHARPNESS;
 	
 	// fetch a 3x3 neighborhood around the pixel 'e',
 	//	a b c
@@ -72,80 +71,146 @@ vec4 hook() {
 	
 	float pixelX = HOOKED_pt.x;
 	float pixelY = HOOKED_pt.y;
-	vec3 a = HOOKED_tex(HOOKED_pos + vec2(-pixelX, -pixelY)).rgb;
-	vec3 b = HOOKED_tex(HOOKED_pos + vec2(0.0, -pixelY)).rgb;
-	vec3 c = HOOKED_tex(HOOKED_pos + vec2(pixelX, -pixelY)).rgb;
-	vec3 d = HOOKED_tex(HOOKED_pos + vec2(-pixelX, 0.0)).rgb;
-	vec3 e = HOOKED_tex(HOOKED_pos).rgb;
-	vec3 f = HOOKED_tex(HOOKED_pos + vec2(pixelX, 0.0)).rgb;
-	vec3 g = HOOKED_tex(HOOKED_pos + vec2(-pixelX, pixelY)).rgb;
-	vec3 h = HOOKED_tex(HOOKED_pos + vec2(0.0, pixelY)).rgb;
-	vec3 i = HOOKED_tex(HOOKED_pos + vec2(pixelX, pixelY)).rgb;
+	float a = HOOKED_tex(HOOKED_pos + vec2(-pixelX, -pixelY)).x;
+	float b = HOOKED_tex(HOOKED_pos + vec2(0.0, -pixelY)).x;
+	float c = HOOKED_tex(HOOKED_pos + vec2(pixelX, -pixelY)).x;
+	float d = HOOKED_tex(HOOKED_pos + vec2(-pixelX, 0.0)).x;
+	float e = HOOKED_tex(HOOKED_pos).x;
+	float f = HOOKED_tex(HOOKED_pos + vec2(pixelX, 0.0)).x;
+	float g = HOOKED_tex(HOOKED_pos + vec2(-pixelX, pixelY)).x;
+	float h = HOOKED_tex(HOOKED_pos + vec2(0.0, pixelY)).x;
+	float i = HOOKED_tex(HOOKED_pos + vec2(pixelX, pixelY)).x;
   
 	// Soft min and max.
 	//	a b c			  b
 	//	d e f * 0.5	 +	d e f * 0.5
 	//	g h i			  h
 	// These are 2.0x bigger (factored out the extra multiply).
-	float mnR = minf3( minf3(d.r, e.r, f.r), b.r, h.r);
-	float mnG = minf3( minf3(d.g, e.g, f.g), b.g, h.g);
-	float mnB = minf3( minf3(d.b, e.b, f.b), b.b, h.b);
 	
-	float mnR2 = minf3( minf3(mnR, a.r, c.r), g.r, i.r);
-	float mnG2 = minf3( minf3(mnG, a.g, c.g), g.g, i.g);
-	float mnB2 = minf3( minf3(mnB, a.b, c.b), g.b, i.b);
+	float mnR = minf3( minf3(d, e, f), b, h);
+	
+	float mnR2 = minf3( minf3(mnR, a, c), g, i);
 	mnR = mnR + mnR2;
-	mnG = mnG + mnG2;
-	mnB = mnB + mnB2;
 	
-	float mxR = maxf3( maxf3(d.r, e.r, f.r), b.r, h.r);
-	float mxG = maxf3( maxf3(d.g, e.g, f.g), b.g, h.g);
-	float mxB = maxf3( maxf3(d.b, e.b, f.b), b.b, h.b);
+	float mxR = maxf3( maxf3(d, e, f), b, h);
 	
-	float mxR2 = maxf3( maxf3(mxR, a.r, c.r), g.r, i.r);
-	float mxG2 = maxf3( maxf3(mxG, a.g, c.g), g.g, i.g);
-	float mxB2 = maxf3( maxf3(mxB, a.b, c.b), g.b, i.b);
+	float mxR2 = maxf3( maxf3(mxR, a, c), g, i);
 	mxR = mxR + mxR2;
-	mxG = mxG + mxG2;
-	mxB = mxB + mxB2;
 	
 	// Smooth minimum distance to signal limit divided by smooth max.
 	float rcpMR = rcp(mxR);
-	float rcpMG = rcp(mxG);
-	float rcpMB = rcp(mxB);
 
 	float ampR = saturate(min(mnR, 2.0 - mxR) * rcpMR);
-	float ampG = saturate(min(mnG, 2.0 - mxG) * rcpMG);
-	float ampB = saturate(min(mnB, 2.0 - mxB) * rcpMB);
 	
 	// Shaping amount of sharpening.
 	ampR = sqrt(ampR);
-	ampG = sqrt(ampG);
-	ampB = sqrt(ampB);
 	
 	// Filter shape.
-	//	0 w 0
-	//	w 1 w
-	//	0 w 0  
+	//  0 w 0
+	//  w 1 w
+	//  0 w 0  
 	float peak = -rcp(lerp(8.0, 5.0, saturate(sharpval)));
 
 	float wR = ampR * peak;
-	float wG = ampG * peak;
-	float wB = ampB * peak;
 
 	float rcpWeightR = rcp(1.0 + 4.0 * wR);
-	float rcpWeightG = rcp(1.0 + 4.0 * wG);
-	float rcpWeightB = rcp(1.0 + 4.0 * wB);
 
-	vec4 outColor = vec4(saturate((b.r*wR+d.r*wR+f.r*wR+h.r*wR+e.r)*rcpWeightR),
-							saturate((b.g*wG+d.g*wG+f.g*wG+h.g*wG+e.g)*rcpWeightG),
-							saturate((b.b*wB+d.b*wB+f.b*wB+h.b*wB+e.b)*rcpWeightB), 0);
+	vec4 outColor = vec4(saturate((b*wR+d*wR+f*wR+h*wR+e)*rcpWeightR), 0, 0, 0);
 	return outColor;
 }
 
 
+//!DESC Anime4K-Hybrid-Bilateral-v2.0RC5
+//!HOOK NATIVE
+//!BIND HOOKED
 
-//!DESC Anime4K-Hybrid-ComputeGradientX-v2.0RC3
+/* ---------------------- BILATERAL MODE FILTERING SETTINGS ---------------------- */
+
+#define STRENGTH 0.2
+#define SPREAD_STRENGTH 2.0
+#define MODE_REGULARIZATION 20.0
+
+/* --- MOST OF THE OTHER SETTINGS CAN BE FOUND AT THE END --- */
+
+#define KERNELSIZE 3
+#define KERNELHALFSIZE 1
+#define KERNELLEN 9
+
+#define GETOFFSET(i) vec2((i % KERNELSIZE) - KERNELHALFSIZE, (i / KERNELSIZE) - KERNELHALFSIZE)
+
+
+float gaussian(float x, float s, float m) {
+	return (1 / (s * sqrt(2 * 3.14159))) * exp(-0.5 * pow(abs(x - m) / s, 2.0));
+}
+
+
+vec4 getMean(vec4 histogram_v[KERNELLEN], float histogram_w[KERNELLEN]) {
+	vec4 valsum = vec4(0);
+	float normsum = 0.000001; //Avoid divide by zero
+	
+	for (int i=0; i<KERNELLEN; i++) {
+		valsum += histogram_v[i] * histogram_w[i];
+		normsum += histogram_w[i];
+	}
+	
+	return valsum / normsum;
+}
+
+
+vec4 getMode(vec4 histogram_v[KERNELLEN], float histogram_w[KERNELLEN]) {
+	vec4 maxv = vec4(0);
+	float maxw = 0;
+	
+	for (int i=0; i<KERNELLEN; i++) {
+		if (histogram_w[i] > maxw) {
+			maxw = histogram_w[i];
+			maxv = histogram_v[i];
+		}
+	}
+	
+	return maxv;
+}
+
+vec4 hook() {
+	vec2 d = HOOKED_pt;
+	
+	float sharpval = clamp(HOOKED_size.x / 1920, 0, 1);
+	
+	
+	vec4 histogram_v[KERNELLEN];
+	float histogram_w[KERNELLEN];
+	float histogram_wn[KERNELLEN];
+	
+	float vc = HOOKED_tex(HOOKED_pos).x;
+	
+	float s = vc * STRENGTH + 0.0001;
+	float ss = SPREAD_STRENGTH * sharpval + 0.0001;
+	
+	
+	for (int i=0; i<KERNELLEN; i++) {
+		vec2 ipos = GETOFFSET(i);
+		histogram_v[i] = HOOKED_tex(HOOKED_pos + ipos * d);
+		histogram_w[i] = gaussian(vc - histogram_v[i].x, s, 0) * gaussian(distance(vec2(0), ipos), ss, 0);
+		histogram_wn[i] = 0;
+	}
+	
+	float sr = MODE_REGULARIZATION / 255.0;
+	
+	
+	for (int i=0; i<KERNELLEN; i++) {
+		for (int j=0; j<KERNELLEN; j++) {
+			histogram_wn[j] += gaussian(histogram_v[j].x, sr, histogram_v[i].x) * histogram_w[i];
+		}
+	}
+	
+	
+	return vec4(getMode(histogram_v, histogram_wn).x, getMean(histogram_v, histogram_wn).yz, 0);
+}
+
+
+
+
+//!DESC Anime4K-Hybrid-ComputeGradientX-v2.0RC5
 //!HOOK SCALED
 //!BIND HOOKED
 //!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
@@ -184,7 +249,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-Hybrid-ComputeGradientY-v2.0RC3
+//!DESC Anime4K-Hybrid-ComputeGradientY-v2.0RC5
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMA
@@ -269,7 +334,7 @@ vec4 hook() {
 	return vec4(sobel_norm, dval, 0, 0);
 }
 
-//!DESC Anime4K-Hybrid-ComputeSecondGradientX-v2.0RC3
+//!DESC Anime4K-Hybrid-ComputeSecondGradientX-v2.0RC5
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMAD
@@ -309,7 +374,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-Hybrid-ComputeSecondGradientY-v2.0RC3
+//!DESC Anime4K-Hybrid-ComputeSecondGradientY-v2.0RC5
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMAD
@@ -359,7 +424,7 @@ vec4 hook() {
 }
 
 
-//!DESC Anime4K-Hybrid-Refine-v2.0RC3
+//!DESC Anime4K-Hybrid-Refine-v2.0RC5
 //!HOOK SCALED
 //!BIND HOOKED
 //!BIND LUMA
