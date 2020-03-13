@@ -7,6 +7,8 @@ Discord: Tsubajashi#8355
 
 or just make a pull request if you have any recommendations, if i like it, i put it in.
 
+if you like to donate for some reason, heres a link: https://www.paypal.com/paypalme2/tsubajashi (its here due to a request, its entirely optional)
+
 # Installation
 Depending on your Operating System, you need to place the stuff inside the zip in a certain directory.
 The root directory needs to look like this:
