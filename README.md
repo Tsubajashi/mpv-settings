@@ -1,6 +1,8 @@
 # mpv-settings
 basically my settings for MPV (Windows/Mac/Linux Compatible)
 
+i also have a Server where i mostly help people. you can join here: https://discord.gg/WjtkbcQ
+
 thats my tweaked config.
 might not be suitable for your pc, but if you have any recommendations to switch stuff, just tell me.
 Discord: Tsubajashi#8355
