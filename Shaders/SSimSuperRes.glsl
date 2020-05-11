@@ -26,7 +26,7 @@
 #define offset      vec2(0,0)
 
 #define MN(B,C,x)   (x < 1.0 ? ((2.-1.5*B-(C))*x + (-3.+2.*B+C))*x*x + (1.-(B)/3.) : (((-(B)/6.-(C))*x + (B+5.*C))*x + (-2.*B-8.*C))*x+((4./3.)*B+4.*C))
-#define Kernel(x)   MN(0.68, 0.16, abs(x))
+#define Kernel(x)   MN(0.334, 0.333, abs(x))
 #define taps        2.0
 
 #define Kb 0.0722
@@ -72,7 +72,7 @@ vec4 hook() {
 #define offset      vec2(0,0)
 
 #define MN(B,C,x)   (x < 1.0 ? ((2.-1.5*B-(C))*x + (-3.+2.*B+C))*x*x + (1.-(B)/3.) : (((-(B)/6.-(C))*x + (B+5.*C))*x + (-2.*B-8.*C))*x+((4./3.)*B+4.*C))
-#define Kernel(x)   MN(0.68, 0.16, abs(x))
+#define Kernel(x)   MN(0.334, 0.333, abs(x))
 #define taps        2.0
 
 #define Kb 0.0722
