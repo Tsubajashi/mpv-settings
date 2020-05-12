@@ -21,13 +21,13 @@ The root directory needs to look like this:
 
 -->mpv.conf
 
---->Shaders
+--->shaders
 
 --->script-opts
 
 --->scripts
 
-Inside the mpv.conf, there are profile switches. choose them as you need them.
+You will have more than one mpv config in your folder. Rename the one you want to use to mpv.conf.
 
 # WINDOWS INSTALLATION
 "C:\Users\YOURNAME\AppData\Roaming\mpv"
