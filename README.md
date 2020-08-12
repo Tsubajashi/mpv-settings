@@ -45,6 +45,5 @@ macOS 11 Big Sur is not tested yet - just in case don't download it as i cannot 
 
 # LINUX INSTALLATION
 Path:
-
-/home/user/.config/mpv
+Newly created Linux installs from master use /home/user/.mpv instead of the old /home/user/.config/mpv
 
