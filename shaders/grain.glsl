@@ -3,8 +3,8 @@
 //!DESC gaussian smoothed film grain
 //!COMPUTE 32 32
 
-#define INTENSITY 0.02
-#define TAPS 5
+#define INTENSITY 0.015
+#define TAPS 3
 
 const uint row_size = 2 * TAPS + 1;
 const float weights[row_size] = {
