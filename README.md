@@ -27,7 +27,7 @@ The root directory needs to look like this:
 
 --->scripts
 
-Dont forget to select the proper Profile for your Operating System.
+you need to rename the proper mpv.conf you want to use to mpv.conf, as i split the different OS' Profiles to avoid errors.
 
 # WINDOWS INSTALLATION
 "C:\Users\YOURNAME\AppData\Roaming\mpv"
