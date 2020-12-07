@@ -31,7 +31,7 @@
 
 //--------------------------------------- Settings ------------------------------------------------
 
-#define curve_height    0.4                  // Main control of sharpening strength [>0]
+#define curve_height    0.3                  // Main control of sharpening strength [>0]
                                              // 0.3 <-> 2.0 is a reasonable range of values
 
 #define video_level_out false                // True to preserve BTB & WTW (minor summation error)
@@ -41,11 +41,11 @@
 
 #define curveslope      0.5                  // Sharpening curve slope, high edge values
 
-#define L_overshoot     0.003                // Max light overshoot before compression [>0.001]
+#define L_overshoot     0.002                // Max light overshoot before compression [>0.001]
 #define L_compr_low     0.167                // Light compression, default (0.169=~9x)
 #define L_compr_high    0.334                // Light compression, surrounded by edges (0.337=~4x)
 
-#define D_overshoot     0.009                // Max dark overshoot before compression [>0.001]
+#define D_overshoot     0.002                // Max dark overshoot before compression [>0.001]
 #define D_compr_low     0.250                // Dark compression, default (0.253=~6x)
 #define D_compr_high    0.500                // Dark compression, surrounded by edges (0.504=~2.5x)
 
