@@ -32,11 +32,10 @@ Path:
 
 /USERNAME/.config/mpv
 
-Tested Apple Devices:
+Tested Apple Devices on latest OS (BigSur at the time of writing the readme):
 
 - Base Macbook Pro 2018 13"
 
-macOS 11 Big Sur is not tested yet - just in case don't download it as i cannot guarantee that everything works fine.
 
 # LINUX INSTALLATION
 Path:
