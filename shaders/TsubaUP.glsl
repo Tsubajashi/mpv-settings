@@ -1,5 +1,5 @@
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC feature map 1
 //!BIND LUMA
 //!SAVE FEATURE1
@@ -36,7 +36,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC feature map 2
 //!BIND LUMA
 //!SAVE FEATURE2
@@ -73,7 +73,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC feature map 3
 //!BIND LUMA
 //!SAVE FEATURE3
@@ -110,7 +110,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 1_1
 //!BIND FEATURE1
 //!BIND FEATURE2
@@ -152,7 +152,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 1_2
 //!BIND FEATURE1
 //!BIND FEATURE2
@@ -194,7 +194,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 1_3
 //!BIND FEATURE1
 //!BIND FEATURE2
@@ -236,7 +236,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 2_1
 //!BIND MODEL21
 //!BIND MODEL22
@@ -278,7 +278,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 2_2
 //!BIND MODEL21
 //!BIND MODEL22
@@ -320,7 +320,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 2_3
 //!BIND MODEL21
 //!BIND MODEL22
@@ -362,7 +362,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 3_1
 //!BIND MODEL1
 //!BIND MODEL2
@@ -404,7 +404,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 3_2
 //!BIND MODEL1
 //!BIND MODEL2
@@ -446,7 +446,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 3_3
 //!BIND MODEL1
 //!BIND MODEL2
@@ -488,7 +488,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 4_1
 //!BIND MODEL21
 //!BIND MODEL22
@@ -530,7 +530,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 4_2
 //!BIND MODEL21
 //!BIND MODEL22
@@ -572,7 +572,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC mapping 4_3
 //!BIND MODEL21
 //!BIND MODEL22
@@ -614,7 +614,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC sub-band residuals 1
 //!BIND MODEL1
 //!BIND MODEL2
@@ -634,7 +634,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC sub-band residuals 2
 //!BIND MODEL1
 //!BIND MODEL2
@@ -654,7 +654,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC sub-band residuals 3
 //!BIND MODEL1
 //!BIND MODEL2
@@ -674,7 +674,7 @@ return res;
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!DESC sub-pixel convolution 1
 //!BIND RES1
 //!BIND RES2
@@ -715,7 +715,7 @@ return vec4(res);
 }
 
 //!HOOK LUMA
-//!WHEN HOOKED.w OUTPUT.w < HOOKED.h OUTPUT.h < *
+//!WHEN OUTPUT.w LUMA.w / 1.200 > OUTPUT.h LUMA.h / 1.200 > *
 //!WIDTH LUMA.w 2 *
 //!HEIGHT LUMA.h 2 *
 //!DESC aggregation
@@ -729,490 +729,3 @@ vec4 res = SUBCONV1_tex(base);
 return vec4(res[index.x * 2 + index.y], 0, 0, 1);
 }
 
-//!HOOK POSTKERNEL
-//!BIND HOOKED
-//!SAVE LOWRES
-//!WIDTH NATIVE_CROPPED.w
-//!HEIGHT NATIVE_CROPPED.h
-//!WHEN NATIVE_CROPPED.h OUTPUT.h <
-//!COMPONENTS 4
-//!DESC TsubaUP Downscaling 1 [robidoux]
-
-#define axis 1
-
-#define offset      vec2(0,0)
-
-#define MN(B,C,x)   (x < 1.0 ? ((2.-1.5*B-(C))*x + (-3.+2.*B+C))*x*x + (1.-(B)/3.) : (((-(B)/6.-(C))*x + (B+5.*C))*x + (-2.*B-8.*C))*x+((4./3.)*B+4.*C))
-#define Kernel(x)   MN(0.3782158, 0.3108921, abs(x))
-#define taps        2.0
-
-#define Luma(rgb)   ( dot(rgb*rgb, vec3(0.212655, 0.715158, 0.072187)) )
-
-vec4 hook() {
-    // Calculate bounds
-    float low  = ceil((HOOKED_pos - taps/input_size) * HOOKED_size - offset - 0.5)[axis];
-    float high = floor((HOOKED_pos + taps/input_size) * HOOKED_size - offset - 0.5)[axis];
-
-    float W = 0.0;
-    vec4 avg = vec4(0);
-    vec2 pos = HOOKED_pos;
-    vec4 tex;
-
-    for (float k = low; k <= high; k++) {
-        pos[axis] = HOOKED_pt[axis] * (k - offset[axis] + 0.5);
-        float rel = (pos[axis] - HOOKED_pos[axis])*input_size[axis];
-        float w = Kernel(rel);
-
-        tex.rgb = textureLod(HOOKED_raw, pos, 0.0).rgb * HOOKED_mul;
-        tex.a = Luma(tex.rgb);
-        avg += w * tex;
-        W += w;
-    }
-    avg /= W;
-
-    return vec4(avg.rgb, abs(avg.a - Luma(avg.rgb)));
-}
-
-//!HOOK POSTKERNEL
-//!BIND LOWRES
-//!SAVE LOWRES
-//!WIDTH NATIVE_CROPPED.w
-//!HEIGHT NATIVE_CROPPED.h
-//!WHEN NATIVE_CROPPED.w OUTPUT.w <
-//!COMPONENTS 4
-//!DESC TsubaUP Downscaling 2 [robidoux]
-
-#define axis 0
-
-#define offset      vec2(0,0)
-
-#define MN(B,C,x)   (x < 1.0 ? ((2.-1.5*B-(C))*x + (-3.+2.*B+C))*x*x + (1.-(B)/3.) : (((-(B)/6.-(C))*x + (B+5.*C))*x + (-2.*B-8.*C))*x+((4./3.)*B+4.*C))
-#define Kernel(x)   MN(0.3782158, 0.3108921, abs(x))
-#define taps        2.0
-
-#define Luma(rgb)   ( dot(rgb*rgb, vec3(0.212655, 0.715158, 0.072187)) )
-
-vec4 hook() {
-    // Calculate bounds
-    float low  = ceil((LOWRES_pos - taps/input_size) * LOWRES_size - offset - 0.5)[axis];
-    float high = floor((LOWRES_pos + taps/input_size) * LOWRES_size - offset - 0.5)[axis];
-
-    float W = 0.0;
-    vec4 avg = vec4(0);
-    vec2 pos = LOWRES_pos;
-    vec4 tex;
-
-    for (float k = low; k <= high; k++) {
-        pos[axis] = LOWRES_pt[axis] * (k - offset[axis] + 0.5);
-        float rel = (pos[axis] - LOWRES_pos[axis])*input_size[axis];
-        float w = Kernel(rel);
-
-        tex.rgb = textureLod(LOWRES_raw, pos, 0.0).rgb * LOWRES_mul;
-        tex.a = Luma(tex.rgb);
-        avg += w * tex;
-        W += w;
-    }
-    avg /= W;
-
-    return vec4(avg.rgb, abs(avg.a - Luma(avg.rgb)) + LOWRES_texOff(0).a);
-}
-
-//!HOOK POSTKERNEL
-//!BIND PREKERNEL
-//!SAVE varL
-//!WIDTH NATIVE_CROPPED.w
-//!HEIGHT NATIVE_CROPPED.h
-//!WHEN NATIVE_CROPPED.h OUTPUT.h <
-//!COMPONENTS 4
-//!DESC TsubaUP varL
-
-#define spread      1.0 / 1000.0
-
-#define sqr(x)      pow(x, 2.0)
-#define GetL(x,y)   PREKERNEL_tex(PREKERNEL_pt*(PREKERNEL_pos * input_size + tex_offset + vec2(x,y))).rgb
-
-#define Gamma(x)    ( pow(clamp(x, 0.0, 1.0), vec3(1.0/2.0)) )
-#define Luma(rgb)   ( dot(rgb*rgb, vec3(0.212655, 0.715158, 0.072187)) )
-
-vec4 hook() {
-    vec3 meanL = vec3(0);
-    for (int X=-1; X<=1; X++)
-    for (int Y=-1; Y<=1; Y++) {
-        meanL += GetL(X,Y) * pow(spread, sqr(float(X)) + sqr(float(Y)));
-    }
-    meanL /= (1.0 + 4.0*spread + 4.0*spread*spread);
-
-    float varL = 0.0;
-    for (int X=-1; X<=1; X++)
-    for (int Y=-1; Y<=1; Y++) {
-        varL += Luma(abs(GetL(X,Y) - meanL)) * pow(spread, sqr(float(X)) + sqr(float(Y)));
-    }
-    varL /= (spread + 4.0*spread + 4.0*spread*spread);
-
-    return vec4(GetL(0,0), varL);
-}
-
-//!HOOK POSTKERNEL
-//!BIND LOWRES
-//!SAVE varH
-//!WIDTH NATIVE_CROPPED.w
-//!HEIGHT NATIVE_CROPPED.h
-//!WHEN NATIVE_CROPPED.h OUTPUT.h <
-//!COMPONENTS 1
-//!DESC TsubaUP varH
-
-#define spread      1.0 / 1000.0
-
-#define sqr(x)      pow(x, 2.0)
-#define GetH(x,y)   LOWRES_texOff(vec2(x,y)).rgb
-
-#define Gamma(x)    ( pow(clamp(x, 0.0, 1.0), vec3(1.0/2.0)) )
-#define Luma(rgb)   ( dot(rgb*rgb, vec3(0.212655, 0.715158, 0.072187)) )
-
-vec4 hook() {
-    vec3 meanH = vec3(0);
-    for (int X=-1; X<=1; X++)
-    for (int Y=-1; Y<=1; Y++) {
-        meanH += GetH(X,Y) * pow(spread, sqr(float(X)) + sqr(float(Y)));
-    }
-    meanH /= (1.0 + 4.0*spread + 4.0*spread*spread);
-
-    float varH = 0.0;
-    for (int X=-1; X<=1; X++)
-    for (int Y=-1; Y<=1; Y++) {
-        varH += Luma(abs(GetH(X,Y) - meanH)) * pow(spread, sqr(float(X)) + sqr(float(Y)));
-    }
-    varH /= (spread + 4.0*spread + 4.0*spread*spread);
-
-    return vec4(varH, 0, 0, 0);
-}
-
-//!HOOK POSTKERNEL
-//!BIND HOOKED
-//!BIND LOWRES
-//!BIND varL
-//!BIND varH
-//!WHEN NATIVE_CROPPED.h OUTPUT.h <
-//!DESC TsubaUP Final
-
-// -- Window Size --
-#define taps        3.0
-#define even        (taps - 2.0 * floor(taps / 2.0) == 0.0)
-#define minX        int(1.0-ceil(taps/2.0))
-#define maxX        int(floor(taps/2.0))
-
-#define factor      (LOWRES_pt*HOOKED_size)
-#define Kernel(x)   (cos(acos(-1.0)*(x)/taps)) // Hann kernel
-
-#define sqr(x)      dot(x,x)
-
-// -- Input processing --
-#define L(x,y)      ( varL_tex(varL_pt*(pos+vec2(x,y)+0.5)) )
-#define H(x,y)      ( varH_tex(varH_pt*(pos+vec2(x,y)+0.5)) )
-#define Lowres(x,y) ( LOWRES_tex(LOWRES_pt*(pos+vec2(x,y)+0.5)) )
-
-#define Gamma(x)    ( pow(clamp(x, 0.0, 1.0), vec3(1.0/2.0)) )
-#define GammaInv(x) ( pow(clamp(x, 0.0, 1.0), vec3(2.0)) )
-#define Luma(rgb)   ( dot(rgb*rgb, vec3(0.212655, 0.715158, 0.072187)) )
-
-vec4 hook() {
-    vec4 c0 = HOOKED_tex(HOOKED_pos);
-
-    // Calculate position
-    vec2 pos = HOOKED_pos * LOWRES_size - vec2(0.5);
-    vec2 offset = pos - (even ? floor(pos) : round(pos));
-    pos -= offset;
-
-    vec2 mVar = vec2(0.0);
-    for (int X=-1; X<=1; X++)
-    for (int Y=-1; Y<=1; Y++) {
-        vec2 w = clamp(1.5 - abs(vec2(X,Y) - offset), 0.0, 1.0);
-        mVar += w.r * w.g * vec2(Lowres(X,Y).a, 1.0);
-    }
-    mVar.r /= mVar.g;
-
-    // Calculate faithfulness force
-    float weightSum = 0.0;
-    vec3 diff = vec3(0);
-
-    for (int X = minX; X <= maxX; X++)
-    for (int Y = minX; Y <= maxX; Y++)
-    {
-        float varL = L(X,Y).a;
-        float varH = H(X,Y).r;
-        float R = -sqrt((varL + sqr(0.5/255.0)) / (varH + mVar.r + sqr(0.5/255.0)));
-
-        vec2 krnl = Kernel(vec2(X,Y) - offset);
-        float weight = krnl.r * krnl.g / (Luma(abs(c0.rgb - Lowres(X,Y).rgb)) + Lowres(X,Y).a + sqr(0.5/255.0));
-
-        diff += weight * (L(X,Y).rgb + Lowres(X,Y).rgb * R + (-1.0 - R) * (c0.rgb));
-        weightSum += weight;
-    }
-    diff /= weightSum;
-
-    c0.rgb = ((c0.rgb) + diff);
-
-    return c0;
-}
-
-//!HOOK POSTKERNEL
-//!BIND HOOKED
-//!BIND PREKERNEL
-//!SAVE L2
-//!WIDTH NATIVE_CROPPED.w
-//!WHEN NATIVE_CROPPED.h POSTKERNEL.h >
-//!COMPONENTS 3
-//!DESC TsubaDS calc L2 pass 1
-
-#define axis 1
-
-#define offset      vec2(0,0)
-
-#define MN(B,C,x)   (x < 1.0 ? ((2.-1.5*B-(C))*x + (-3.+2.*B+C))*x*x + (1.-(B)/3.) : (((-(B)/6.-(C))*x + (B+5.*C))*x + (-2.*B-8.*C))*x+((4./3.)*B+4.*C))
-#define Kernel(x)   MN(1.0/3.0, 1.0/3.0, abs(x))
-#define taps        2.0
-
-vec4 hook() {
-    vec2 base = PREKERNEL_pt * (PREKERNEL_pos * input_size + tex_offset);
-
-    // Calculate bounds
-    float low  = ceil((PREKERNEL_pos - taps*POSTKERNEL_pt) * input_size - offset + tex_offset - 0.5)[axis];
-    float high = floor((PREKERNEL_pos + taps*POSTKERNEL_pt) * input_size - offset + tex_offset - 0.5)[axis];
-
-    float W = 0.0;
-    vec4 avg = vec4(0);
-    vec2 pos = base;
-
-    for (float k = low; k <= high; k++) {
-        pos[axis] = PREKERNEL_pt[axis] * (k - offset[axis] + 0.5);
-        float rel = (pos[axis] - base[axis])*POSTKERNEL_size[axis];
-        float w = Kernel(rel);
-
-        avg += w * pow(clamp(textureLod(PREKERNEL_raw, pos, 0.0) * PREKERNEL_mul, 0.0, 1.0), vec4(2.0));
-        W += w;
-    }
-    avg /= W;
-
-    return avg;
-}
-
-//!HOOK POSTKERNEL
-//!BIND HOOKED
-//!BIND L2
-//!SAVE L2
-//!WHEN NATIVE_CROPPED.w POSTKERNEL.w >
-//!COMPONENTS 3
-//!DESC TsubaDS calc L2 pass 2
-
-#define axis 0
-
-#define offset      vec2(0,0)
-
-#define MN(B,C,x)   (x < 1.0 ? ((2.-1.5*B-(C))*x + (-3.+2.*B+C))*x*x + (1.-(B)/3.) : (((-(B)/6.-(C))*x + (B+5.*C))*x + (-2.*B-8.*C))*x+((4./3.)*B+4.*C))
-#define Kernel(x)   MN(1.0/3.0, 1.0/3.0, abs(x))
-#define taps        2.0
-
-vec4 hook() {
-    // Calculate bounds
-    float low  = ceil((L2_pos - taps*POSTKERNEL_pt) * L2_size - offset - 0.5)[axis];
-    float high = floor((L2_pos + taps*POSTKERNEL_pt) * L2_size - offset - 0.5)[axis];
-
-    float W = 0.0;
-    vec4 avg = vec4(0);
-    vec2 pos = L2_pos;
-
-    for (float k = low; k <= high; k++) {
-        pos[axis] = L2_pt[axis] * (k - offset[axis] + 0.5);
-        float rel = (pos[axis] - L2_pos[axis])*POSTKERNEL_size[axis];
-        float w = Kernel(rel);
-
-        avg += w * textureLod(L2_raw, pos, 0.0) * L2_mul;
-        W += w;
-    }
-    avg /= W;
-
-    return avg;
-}
-
-//!HOOK POSTKERNEL
-//!BIND HOOKED
-//!SAVE M
-//!WHEN NATIVE_CROPPED.h POSTKERNEL.h >
-//!COMPONENTS 3
-//!DESC TsubaDS calc Mean
-
-#define locality    8.0
-
-#define offset      vec2(0,0)
-
-#define Kernel(x)   pow(1.0 / locality, abs(x))
-#define taps        3.0
-#define maxtaps     taps
-
-vec4 ScaleH(vec2 pos) {
-    // Calculate bounds
-    float low  = floor(-0.5*maxtaps - offset)[0];
-    float high = floor(+0.5*maxtaps - offset)[0];
-
-    float W = 0.0;
-    vec4 avg = vec4(0);
-
-    for (float k = 0.0; k < maxtaps; k++) {
-        pos[0] = POSTKERNEL_pos[0] + POSTKERNEL_pt[0] * (k + low + 1.0);
-        float rel = (k + low + 1.0) + offset[0];
-        float w = Kernel(rel);
-
-        avg += w * clamp(POSTKERNEL_tex(pos), 0.0, 1.0);
-        W += w;
-    }
-    avg /= W;
-
-    return avg;
-}
-
-vec4 hook() {
-    // Calculate bounds
-    float low  = floor(-0.5*maxtaps - offset)[1];
-    float high = floor(+0.5*maxtaps - offset)[1];
-
-    float W = 0.0;
-    vec4 avg = vec4(0);
-    vec2 pos = POSTKERNEL_pos;
-
-    for (float k = 0.0; k < maxtaps; k++) {
-        pos[1] = POSTKERNEL_pos[1] + POSTKERNEL_pt[1] * (k + low + 1.0);
-        float rel = (k + low + 1.0) + offset[1];
-        float w = Kernel(rel);
-
-        avg += w * ScaleH(pos);
-        W += w;
-    }
-    avg /= W;
-
-    return avg;
-}
-
-//!HOOK POSTKERNEL
-//!BIND HOOKED
-//!BIND L2
-//!BIND M
-//!SAVE R
-//!WHEN NATIVE_CROPPED.h POSTKERNEL.h >
-//!COMPONENTS 3
-//!DESC TsubaDS calc R
-
-#define locality    8.0
-
-#define offset      vec2(0,0)
-
-#define Kernel(x)   pow(1.0 / locality, abs(x))
-#define taps        3.0
-#define maxtaps     taps
-
-mat2x4 ScaleH(vec2 pos) {
-    // Calculate bounds
-    float low  = floor(-0.5*maxtaps - offset)[0];
-    float high = floor(+0.5*maxtaps - offset)[0];
-
-    float W = 0.0;
-    mat2x4 avg = mat2x4(0);
-
-    for (float k = 0.0; k < maxtaps; k++) {
-        pos[0] = L2_pos[0] + L2_pt[0] * (k + low + 1.0);
-        float rel = (k + low + 1.0) + offset[0];
-        float w = Kernel(rel);
-
-        avg += w * mat2x4(pow(clamp(POSTKERNEL_tex(pos), 0.0, 1.0), vec4(2.0)), L2_tex(pos));
-        W += w;
-    }
-    avg /= W;
-
-    return avg;
-}
-
-vec4 hook() {
-    // Calculate bounds
-    float low  = floor(-0.5*maxtaps - offset)[1];
-    float high = floor(+0.5*maxtaps - offset)[1];
-
-    float W = 0.0;
-    mat2x4 avg = mat2x4(0);
-    vec2 pos = L2_pos;
-
-    for (float k = 0.0; k < maxtaps; k++) {
-        pos[1] = L2_pos[1] + L2_pt[1] * (k + low + 1.0);
-        float rel = (k + low + 1.0) + offset[1];
-        float w = Kernel(rel);
-
-        avg += w * ScaleH(pos);
-        W += w;
-    }
-    avg /= W;
-
-    vec3 Sl = abs(avg[0].rgb - pow(M_texOff(0).rgb, vec3(2.0)));
-    vec3 Sh = abs(avg[1].rgb - pow(M_texOff(0).rgb, vec3(2.0)));
-    return vec4(mix(vec3(0.5), 1.0 / (1.0 + sqrt(Sh / Sl)), lessThan(vec3(5e-6), Sl)), 0.0);
-}
-
-//!HOOK POSTKERNEL
-//!BIND HOOKED
-//!BIND M
-//!BIND R
-//!WHEN NATIVE_CROPPED.h POSTKERNEL.h >
-//!DESC TsubaDS final pass
-
-#define locality    8.0
-
-#define offset      vec2(0,0)
-
-#define Kernel(x)   pow(1.0 / locality, abs(x))
-#define taps        3.0
-#define maxtaps     taps
-
-#define Gamma(x)    ( pow(x, vec3(1.0/2.0)) )
-#define GammaInv(x) ( pow(clamp(x, 0.0, 1.0), vec3(2.0)) )
-
-mat3x3 ScaleH(vec2 pos) {
-    // Calculate bounds
-    float low  = floor(-0.5*maxtaps - offset)[0];
-    float high = floor(+0.5*maxtaps - offset)[0];
-
-    float W = 0.0;
-    mat3x3 avg = mat3x3(0);
-
-    for (float k = 0.0; k < maxtaps; k++) {
-        pos[0] = POSTKERNEL_pos[0] + POSTKERNEL_pt[0] * (k + low + 1.0);
-        float rel = (k + low + 1.0) + offset[0];
-        float w = Kernel(rel);
-        vec3 M = Gamma(M_tex(pos).rgb);
-        vec3 R = R_tex(pos).rgb;
-        R = 1.0 / R - 1.0;
-        avg += w * mat3x3(R*M, M, R);
-        W += w;
-    }
-    avg /= W;
-
-    return avg;
-}
-
-vec4 hook() {
-    // Calculate bounds
-    float low  = floor(-0.5*maxtaps - offset)[1];
-    float high = floor(+0.5*maxtaps - offset)[1];
-
-    float W = 0.0;
-    mat3x3 avg = mat3x3(0);
-    vec2 pos = POSTKERNEL_pos;
-
-    for (float k = 0.0; k < maxtaps; k++) {
-        pos[1] = POSTKERNEL_pos[1] + POSTKERNEL_pt[1] * (k + low + 1.0);
-        float rel = (k + low + 1.0) + offset[1];
-        float w = Kernel(rel);
-
-        avg += w * ScaleH(pos);
-        W += w;
-    }
-    avg /= W;
-    vec4 L = clamp(POSTKERNEL_texOff(0), 0.0, 1.0);
-    return vec4(GammaInv(avg[1] + avg[2] * Gamma(L.rgb) - avg[0]), L.w);
-}
