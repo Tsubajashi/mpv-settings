@@ -39,12 +39,15 @@ Tested Apple Devices on latest OS (BigSur at the time of writing the readme):
 
 # LINUX INSTALLATION
 Path:
-Newly created Linux installs from master use /home/user/.mpv instead of the old /home/user/.config/mpv
+/home/user/.config/mpv
 
+/user/ is always the name of the user who wants to use mpv.
 # Community and Discord Help Server
 
-i also have a Server for mpv-settings and AIO_Video_Enhancer. You can join here: https://discord.gg/WjtkbcQ
+I also have a Server for mpv-settings and AIO_Video_Enhancer. You can join here: https://discord.gg/WjtkbcQ
 
 Discord: Tsubajashi#8355
-
-if you like to donate for some reason, heres a link: https://www.paypal.com/paypalme2/tsubajashi
+# DONATIONS
+if you like to donate, heres a link: https://www.paypal.com/paypalme2/tsubajashi
+I always thank anybody who donates to me, as the current time is a bit rough when it comes to my finances, but don't pressure yourself to do so.
+It's a donation after all - if you are in a similar bad spot financially, please use it to get yourself nice things. :)
