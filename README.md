@@ -43,6 +43,11 @@ Path:
 /home/user/.config/mpv
 
 /user/ is always the name of the user who wants to use mpv.
+
+# Documentation
+Here goes all information about scripts and upscaler used. (WIP)
+If you read this, its not up yet, but you can open the scripts folder. All scripts have matching names to their function.
+
 # Community and Discord Help Server
 
 I also have a Server for mpv-settings and AIO_Video_Enhancer. You can join here: https://discord.gg/WjtkbcQ
