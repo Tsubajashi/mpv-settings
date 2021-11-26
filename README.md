@@ -44,7 +44,7 @@ you need to rename the proper config you want to use to mpv.conf.
 example: mpv-windows.conf -> mpv.conf
 
 # WINDOWS INSTALLATION
-"C:\Users\%Username%\AppData\Roaming\mpv"
+> "C:\Users\ %Username% \AppData\Roaming\mpv"
 
 # MAC INSTALLATION
 Path:
