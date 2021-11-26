@@ -22,19 +22,22 @@ Here goes all information about scripts and upscaler used. (WIP)
 
 # Installation
 Depending on your Operating System, you need to place the stuff inside the zip in a certain directory.
-The root directory needs to look like this:
+The root directory needs to look like this (Should be considered a Tree View example):
 
-->mpv
 
--->input.conf
+>Roaming
 
--->mpv.conf
+>>mpv
 
---->shaders
+>>input.conf
 
---->script-opts
+>>mpv.conf
 
---->scripts
+>>>shaders
+
+>>>script-opts
+
+>>>scripts
 
 you need to rename the proper config you want to use to mpv.conf.
 
