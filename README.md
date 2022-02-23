@@ -13,12 +13,9 @@ Here goes all information about scripts and upscaler used. (WIP)
 - acompressor.lua - a simple audio compression script which can normalize your audio of the files played with mpv. See scripts/acompressor.lua for more infos.
 - appendURL.lua - when mpv is opened, you can copy paste a URL in to play from.
 - audio-osc.lua - different on screen controls for audio-only playback.
-- auto-profiles.lua - Assists the mpv.conf by giving it more flexibility to switch profiles on the fly.
 - autoload.lua - preloads all files in a folder into a playlist.
 - seek-to.lua - when "t" is pressed, you can seek to a specific part of the video/audio you are currently watching.
-- stats.lua - for Statistics (shift+I)
 - youtube-quality.lua - if ctrl+f is pressed, you can switch the different resolutions of a youtube video if played back through mpv.
-- ytdl_hook.lua - Assists mpvs internal youtube-dl handling.
 
 # Installation
 Depending on your Operating System, you need to place the stuff inside the zip in a certain directory.
