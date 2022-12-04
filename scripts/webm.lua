@@ -56,7 +56,7 @@ local options = {
 	-- mp3 (libmp3lame)
 	-- and gif
 	output_format = "webm-vp8",
-	twopass = false,
+	twopass = true,
 	-- If set, applies the video filters currently used on the playback to the encode.
 	apply_current_filters = true,
 	-- If set, writes the video's filename to the "Title" field on the metadata.
@@ -116,6 +116,18 @@ function base64_decode(data)
         return string.char(c)
     end))
 end
+local emit_event
+emit_event = function(event_name, ...)
+  return mp.commandv("script-message", "webm-" .. tostring(event_name), ...)
+end
+local test_set_options
+test_set_options = function(new_options_json)
+  local new_options = utils.parse_json(new_options_json)
+  for k, v in pairs(new_options) do
+    options[k] = v
+  end
+end
+mp.register_script_message("mpv-webm-set-options", test_set_options)
 local bold
 bold = function(text)
   return "{\\b1}" .. tostring(text) .. "{\\b0}"
@@ -927,7 +939,11 @@ do
     end,
     getFlags = function(self)
       return {
-        "--ovcopts-add=threads=" .. tostring(options.libvpx_threads)
+        "--ovcopts-add=threads=" .. tostring(options.libvpx_threads),
+        "--ovcopts-add=auto-alt-ref=1",
+        "--ovcopts-add=lag-in-frames=25",
+        "--ovcopts-add=quality=good",
+        "--ovcopts-add=cpu-used=0"
       }
     end
   }
@@ -986,7 +1002,7 @@ do
   _class_0 = setmetatable({
     __init = function(self)
       self.displayName = "WebM (VP9)"
-      self.supportsTwopass = true
+      self.supportsTwopass = false
       self.videoCodec = "libvpx-vp9"
       self.audioCodec = "libopus"
       self.outputExtension = "webm"
@@ -1170,7 +1186,7 @@ do
       for _, v in ipairs(command) do
         local _continue_0 = false
         repeat
-          if v:match("^%-%-vf%-add=lavfi%-scale") or v:match("^%-%-vf%-add=lavfi%-crop") or v:match("^%-%-vf%-add=fps") then
+          if v:match("^%-%-vf%-add=lavfi%-scale") or v:match("^%-%-vf%-add=lavfi%-crop") or v:match("^%-%-vf%-add=fps") or v:match("^%-%-vf%-add=lavfi%-eq") then
             local n = v:gsub("^%-%-vf%-add=", ""):gsub("^lavfi%-", "")
             cfilter = cfilter .. "[vidtmp]" .. tostring(n) .. "[vidtmp];"
           else
@@ -1562,6 +1578,21 @@ get_fps_filters = function()
   end
   return { }
 end
+local get_contrast_brightness_and_saturation_filters
+get_contrast_brightness_and_saturation_filters = function()
+  local mpv_brightness = mp.get_property("brightness")
+  local mpv_contrast = mp.get_property("contrast")
+  local mpv_saturation = mp.get_property("saturation")
+  if mpv_brightness == 0 and mpv_contrast == 0 and mpv_saturation == 0 then
+    return { }
+  end
+  local eq_saturation = (mpv_saturation + 100) / 100.0
+  local eq_contrast = (mpv_contrast + 100) / 100.0
+  local eq_brightness = (mpv_brightness / 50.0 + eq_contrast - 1) / 2.0
+  return {
+    "lavfi-eq=contrast=" .. tostring(eq_contrast) .. ":saturation=" .. tostring(eq_saturation) .. ":brightness=" .. tostring(eq_brightness)
+  }
+end
 local append_property
 append_property = function(out, property_name, option_name)
   option_name = option_name or property_name
@@ -1592,6 +1623,7 @@ get_playback_options = function()
   append_property(ret, "sub-ass-force-style")
   append_property(ret, "sub-ass-vsfilter-aspect-compat")
   append_property(ret, "sub-auto")
+  append_property(ret, "sub-pos")
   append_property(ret, "sub-delay")
   append_property(ret, "video-rotate")
   append_property(ret, "ytdl-format")
@@ -1660,6 +1692,7 @@ get_video_filters = function(format, region)
   end
   append(filters, get_scale_filters())
   append(filters, get_fps_filters())
+  append(filters, get_contrast_brightness_and_saturation_filters())
   append(filters, format:getPostFilters())
   return filters
 end
@@ -1839,6 +1872,7 @@ encode = function(region, startTime, endTime)
   append(command, {
     "--o=" .. tostring(out_path)
   })
+  emit_event("encode-started")
   if options.twopass and format.supportsTwopass and not is_stream then
     local first_pass_cmdline
     do
@@ -1862,6 +1896,7 @@ encode = function(region, startTime, endTime)
     })
     if not res then
       message("First pass failed! Check the logs for details.")
+      emit_event("encode-finished", "fail")
       return 
     end
     append(command, {
@@ -1894,8 +1929,10 @@ encode = function(region, startTime, endTime)
     end
     if res then
       message("Encoded successfully! Saved to\\N" .. tostring(bold(out_path)))
+      emit_event("encode-finished", "success")
     else
       message("Encode failed! Check the logs for details.")
+      emit_event("encode-finished", "fail")
     end
     os.remove(get_pass_logfile_path(out_path))
     if is_temporary then
@@ -2703,6 +2740,10 @@ do
       ass:append(tostring(bold('ESC:')) .. " close\\N")
       return mp.set_osd_ass(window_w, window_h, ass.text)
     end,
+    show = function(self)
+      _class_0.__parent.show(self)
+      return emit_event("show-main-page")
+    end,
     onUpdateCropRegion = function(self, updated, newRegion)
       if updated then
         self.region = newRegion
@@ -2862,10 +2903,12 @@ mp.add_key_binding(options.keybind, "display-webm-encoder", (function()
 end)(), {
   repeatable = false
 })
-return mp.register_event("file-loaded", (function()
+mp.register_event("file-loaded", (function()
   local _base_0 = mainPage
   local _fn_0 = _base_0.setupStartAndEndTimes
   return function(...)
     return _fn_0(_base_0, ...)
   end
 end)())
+msg.verbose("Loaded mpv-webm script!")
+return emit_event("script-loaded")
