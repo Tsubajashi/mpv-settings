@@ -15,7 +15,6 @@ Here goes all information about scripts and upscaler used. (WIP)
 - audio-osc.lua - different on screen controls for audio-only playback.
 - autoload.lua - preloads all files in a folder into a playlist.
 - seek-to.lua - when "t" is pressed, you can seek to a specific part of the video/audio you are currently watching.
-- youtube-quality.lua - if ctrl+f is pressed, you can switch the different resolutions of a youtube video if played back through mpv.
 - webm.lua - Simple WebM maker for mpv. By default, the script is activated by the W (shift+w) key.
 - playlistmanager.lua - This script allows you to see and interact with your playlist in an intuitive way. SHIFT+ENTER = playlist
 - ytdlautoformat.lua - A simple mpv script to automatically change ytdl-format, specifically if the URL is Youtube or Twitch. This script supports and works with multi-purpose playlists. For example, if you have a playlist that includes Youtube URLs, Vimeo URLs and local files.
