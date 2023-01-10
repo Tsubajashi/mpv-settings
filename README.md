@@ -18,8 +18,7 @@ Here goes all information about scripts and upscaler used. (WIP)
 - webm.lua - Simple WebM maker for mpv. By default, the script is activated by the W (shift+w) key.
 - playlistmanager.lua - This script allows you to see and interact with your playlist in an intuitive way. SHIFT+ENTER = playlist
 - modernx.lua - A modern OSC UI replacement for MPV that retains the functionality of the default OSC. 
-- quality-menu.lua - Allows you to change the streamed video and audio quality (ytdl-format) on the fly.
-Simply open the video or audio menu, select your prefered format and confirm your choice. The keybindings for opening the menus are configured in input.conf, and everthing else is configured in quality-menu.conf. By default: List Video Formats: F (shift+f), List Audio Formats: Alt+f, Reload: Ctrl+r
+- quality-menu.lua - Allows you to change the streamed video and audio quality (ytdl-format) on the fly. Simply open the video or audio menu, select your prefered format and confirm your choice. The keybindings for opening the menus are configured in input.conf, and everthing else is configured in quality-menu.conf. By default: List Video Formats: F (shift+f), List Audio Formats: Alt+f, Reload: Ctrl+r
 
 # Installation
 Depending on your Operating System, you need to place the stuff inside the zip in a certain directory.
