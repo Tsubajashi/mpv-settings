@@ -17,8 +17,8 @@ Here goes all information about scripts and upscaler used. (WIP)
 - seek-to.lua - when "t" is pressed, you can seek to a specific part of the video/audio you are currently watching.
 - webm.lua - Simple WebM maker for mpv. By default, the script is activated by the W (shift+w) key.
 - playlistmanager.lua - This script allows you to see and interact with your playlist in an intuitive way. SHIFT+ENTER = playlist
-- ytdlautoformat.lua - A simple mpv script to automatically change ytdl-format, specifically if the URL is Youtube or Twitch. This script supports and works with multi-purpose playlists. For example, if you have a playlist that includes Youtube URLs, Vimeo URLs and local files.
 - modernx.lua - A modern OSC UI replacement for MPV that retains the functionality of the default OSC. 
+- quality-menu.lua - Allows you to change the streamed video and audio quality (ytdl-format) on the fly. Simply open the video or audio menu, select your prefered format and confirm your choice. The keybindings for opening the menus are configured in input.conf, and everthing else is configured in quality-menu.conf. By default: List Video Formats: F (shift+f), List Audio Formats: Alt+f, Reload: Ctrl+r
 
 # Installation
 Depending on your Operating System, you need to place the stuff inside the zip in a certain directory.
