@@ -69,7 +69,7 @@ Path:
 
 I also have a Server for mpv-settings and AIO_Video_Enhancer. You can join here: https://discord.gg/WjtkbcQ
 
-Discord: Tsubajashi#8355
+Discord: @Tsubajashi
 
 # DONATIONS
 if you like to donate, heres a link: https://paypal.me/tsubajashi
