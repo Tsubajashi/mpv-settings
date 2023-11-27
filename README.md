@@ -57,6 +57,7 @@ Tested Apple Devices on latest OS (BigSur at the time of writing the readme):
 
 - Base Macbook Pro 2018 13"
 - Macbook Air M1 8Cpu/8Gpu
+- Macbook Pro M2 8Cpu/10Gpu
 
 
 # LINUX INSTALLATION
