@@ -29,9 +29,9 @@ The root directory needs to look like this (Should be considered a Tree View exa
 
 >>mpv
 
->>input.conf
+>>>input.conf
 
->>mpv.conf
+>>>mpv.conf
 
 >>>shaders
 
