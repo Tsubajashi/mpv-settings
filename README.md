@@ -66,6 +66,38 @@ Path:
 
 /user/ is always the name of the user who wants to use mpv.
 
+# NVIDIA SHIELD / ANDROID TV INSTALLATION
+
+Requires [mpv-android](https://github.com/mpv-android/mpv-android). Install it from the Play Store or sideload the APK.
+
+Rename `mpv_shield.conf` to `mpv.conf` and place it at:
+
+> `/sdcard/mpv/mpv.conf`
+
+(also accessible as `/storage/emulated/0/mpv/mpv.conf`)
+
+The folder structure should look like this:
+
+>sdcard
+
+>>mpv
+
+>>>input.conf
+
+>>>mpv.conf
+
+>>>shaders
+
+>>>script-opts
+
+>>>scripts
+
+>>>fonts
+
+Tested devices:
+
+- NVIDIA Shield Pro (2019)
+
 # Community and Discord Help Server
 
 I also have a Server for mpv-settings and AIO_Video_Enhancer. You can join here: https://discord.gg/WjtkbcQ (currently locked, but i also accept DMs)

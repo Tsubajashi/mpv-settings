@@ -1044,7 +1044,11 @@ end
 function checktitle()
     local mediatitle = mp.get_property("media-title")
     if (mp.get_property("filename") ~= mediatitle) and user_opts.dynamictitle then
-        if (string.find(mp.get_property("path"), "watch?")) then
+        local path = mp.get_property("path")
+        if (path == nil) then
+            path = ""
+        end
+        if (string.find(path, "watch?")) then
             user_opts.title = "${media-title}" -- youtube videos
         elseif mp.get_property("filename/no-ext") ~= mediatitle then
             msg.info("Changing title to include filename")
@@ -1203,26 +1207,32 @@ function exec_description(args, result)
         capture_stdout = true,
         capture_stderr = true
     }, function(res, val, err)
-        -- replace actual linebreaks with ASS linebreaks
-        state.localDescriptionClick = string.gsub(val.stdout .. state.dislikes, '\n', "\\N")
+        if val and val.stdout then
+            -- replace actual linebreaks with ASS linebreaks
+            state.localDescriptionClick = string.gsub(val.stdout .. state.dislikes, '\n', "\\N")
 
-        -- check if description exists, if it doesn't get rid of the extra "----------"
-        local descriptionText = state.localDescriptionClick:match("\\N----------\\N(.-)\\N----------\\N")
-        if (descriptionText == '' or descriptionText == '\\N') then
-            state.localDescriptionClick = state.localDescriptionClick:gsub("(.*)\\N----------\\N", "%1")
+            -- check if description exists, if it doesn't get rid of the extra "----------"
+            local descriptionText = state.localDescriptionClick:match("\\N----------\\N(.-)\\N----------\\N")
+            if (descriptionText == '' or descriptionText == '\\N') then
+                state.localDescriptionClick = state.localDescriptionClick:gsub("(.*)\\N----------\\N", "%1")
+            end
+
+            -- segment localDescriptionClick parts with " - "
+            local beforeLastPattern, afterLastPattern = state.localDescriptionClick:match("(.*)\\N----------\\N(.*)")
+            beforeLastPattern = beforeLastPattern and beforeLastPattern:sub(1, 120) or ""
+            afterLastPattern = afterLastPattern or ""
+
+            state.videoDescription = beforeLastPattern  .. "\\N----------\\N" .. afterLastPattern:gsub("\\N", " / ")
+
+            local startPos, endPos = state.videoDescription:find("\\N----------\\N")
+
+            if startPos and endPos then
+                state.videoDescription = string.gsub(state.videoDescription:sub(endPos + 1), "\\N----------\\N", " | ")
+
+                state.descriptionLoaded = true
+                msg.info("WEB: Loaded video description")
+            end
         end
-
-        -- segment localDescriptionClick parts with " - "
-        local beforeLastPattern, afterLastPattern = state.localDescriptionClick:match("(.*)\\N----------\\N(.*)")
-        beforeLastPattern = beforeLastPattern:sub(1, 120)
-        state.videoDescription = beforeLastPattern  .. "\\N----------\\N" .. afterLastPattern:gsub("\\N", " / ")
-
-        local startPos, endPos = state.videoDescription:find("\\N----------\\N")
-        state.videoDescription = string.gsub(state.videoDescription:sub(endPos + 1), "\\N----------\\N", " | ")
-
-        state.descriptionLoaded = true
-        msg.info("WEB: Loaded video description")
-
     end)
 end
 
