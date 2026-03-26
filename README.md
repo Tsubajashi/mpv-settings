@@ -98,9 +98,7 @@ Tested devices:
 
 - NVIDIA Shield Pro (2019)
 
-# Community and Discord Help Server
-
-I also have a Server for mpv-settings and AIO_Video_Enhancer. You can join here: https://discord.gg/WjtkbcQ (currently locked, but i also accept DMs)
+# Any help required?
 
 Discord: @Tsubajashi
 
